@@ -1,5 +1,6 @@
-* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700& display=swap');
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 *{
 margin: 0;
 padding: 0;
@@ -11,17 +12,17 @@ display: flex;
 align-items: center;
 justify-content:center;
 min-height: 100vh;
-background: #4c68d7;
+background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(171,102,255,1) 0%, rgba(116,182,247,1) 90% );
 }
 ::selection{
-color:   #4c68d7;
-background:   #4c68d7;
+color: #f02b80;
+background: #f02b80;
 }
 .wrapper{
 width: 370px;
 padding: 25px 30px;
 border-radius: 7px;
-background: #f3f3ef;
+background-image: radial-gradient( circle 588px at 31.7% 40.2%,  rgba(225,200,239,1) 21.4%, rgba(163,225,233,1) 57.1% );
 box-shadow: 7px 7px 20px rgba(0,0,0,0.05);
 }
 .wrapper header{
@@ -34,7 +35,7 @@ margin: 35px 0 20px;
 }
 form .row{
 display: flex;
-margin-bottom: 20px/;
+margin-bottom: 20px;
 flex-direction: column;
 }
 form .row label{
@@ -93,11 +94,11 @@ color: #fff;
 font-size: 17px;
 cursor: pointer;
 margin-top: 10px;
-background:  #8a3ab9;
+background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 transition: 0.3s ease;
 }
 form button:hover{
-background: #68b2dd;
+    background-image: radial-gradient( circle farthest-corner at 32.7% 82.7%,  rgba(173,0,171,1) 8.3%, rgba(15,51,92,1) 60% );
 }
 @media(max-width: 400px){
 .wrapper{
