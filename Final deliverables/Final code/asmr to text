@@ -1,0 +1,63 @@
+
+<html>
+<head>
+   <title>Open webcam using JavaScript.</title>
+   <style>
+      *{
+         background-color: #658EA9;
+      }
+      #videoCam {
+         width: 630px;
+         height: 300px;
+         margin-left: 0px;
+         border: 3px solid #ccc;
+         background: black;
+      }
+      #startBtn {
+         margin-left: 280px;
+         width: 120px;
+         height: 45px;
+         cursor: pointer;
+         font-weight: bold;
+      }
+      #startBtn:hover{
+         background-image: radial-gradient( circle 588px at 31.7% 40.2%,  rgba(225,200,239,1) 21.4%, rgba(163,225,233,1) 57.1% );
+         color: rgb(14, 3, 3);
+      }
+   </style>
+</head>
+<body>
+   <h1>To Convert Your SignLanguage into Text click Camera..!</h1>
+   <br/>
+   <video id="videoCam"></video>
+   <br/><br/>
+   <button id="startBtn" onclick="openCam()">Open Camera</button>
+   <script>
+      function openCam(){
+         let All_mediaDevices=navigator.mediaDevices
+         if (!All_mediaDevices || !All_mediaDevices.getUserMedia) {
+            console.log("getUserMedia() not supported.");
+            return;
+         }
+         All_mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+         })
+         .then(function(vidStream) {
+            var video = document.getElementById('videoCam');
+            if ("srcObject" in video) {
+               video.srcObject = vidStream;
+            } else {
+               video.src = window.URL.createObjectURL(vidStream);
+            }
+            video.onloadedmetadata = function(e) {
+               video.play();
+            };
+         })
+         .catch(function(e) {
+            console.log(e.name + ": " + e.message);
+         });
+      }
+   </script> 
+</body>
+</html>
