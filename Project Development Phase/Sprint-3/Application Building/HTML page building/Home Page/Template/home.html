@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="bg-[#F4EDFF] ">
+        <div class="max-w-6xl px-2 py-1  mx-auto ">
+            <div class="flex justify-between font-semibold text-xl">
+                <div class="flex space-x-4 ">
+                    <!-- logo -->
+                    <div class="text-2xl">
+                        <a href="#" class="flex items-center py-5 px-2 text-gray-900 ">
+                            <svg class="h-6 w-6 mr-1 text-purple-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12.75 19.5v-.75a7.5 7.5 0 00-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                            </svg>
+                            <span class="font-bold">Ai app</span>
+                        </a>
+                    </div>
+                    <!-- primary nav -->
+                    <div class="flex hidden md:flex items-center spcae-x-1 text-2xl">
+                        <a href="{{url_for('home')}}" class="py-5 px-3 text-gray-600 hover:text-black" id="pHome">Home</a>
+                    </div>
+                </div>
+                <!-- sec nav -->
+                <div class="flex hidden md:flex items-center space-x-1">
+                    <a href="{{url_for('login')}}" class="py-5 px-3 text-gray-600 hover:text-black" id="pHome">Login</a>
+                    <a href="{{url_for('register')}}" class="py-5 px-3 text-gray-600 hover:text-black">register</a>
+
+                </div>
+                <!-- mobile button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu md:hidden ">
+            <nav class="fixed top-0 right-0 bottom-0 left-0 backdrop-blur-sm z-10 text-center ">
+                <!-- ul links -->
+                <ul class="absolute top-0 right-0 bottom-0 z-10 w-10/12 py-4 bg-[#F4EDFF] drop-shadow-2xl font-bold text-xl">
+                    <li class="border-b border-inherit">
+                        <a href="{{url_for('home')}}" class="block py-2 px-4  hover:bg-gray-200 " id="home">Home</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="{{url_for('login')}}" class="block py-2 px-4  hover:bg-gray-200" id="course">login</a>
+                    </li>
+                    <li class="border-b border-inherit">
+                        <a href="{{url_for('register')}}" class="block py-2 px-4  hover:bg-gray-200" id="course">Register</a>
+                    </li>
+                </ul>
+        
+                <!-- close btn -->
+                <button class="absolute bottom-0 left-0 top-0 right-0  btnclose">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute top-2 left-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>              
+                </button>
+            </nav>
+
+
+        </div>
+
+    </div>
+
+     <!-- nav end -->
+
+     <div class="bg-purple-500 h-96 p-10 text-white text-xl text-center">
+        <h2 class="text-5xl mt-8">Welcome !</h2>
+        <h3 class="text-3xl pt-5">Are you Registered ?</h3>
+        <button class="hover:bg-blue-300 bg-white text-black mt-8 px-4 py-2 rounded"> <a href="./login"> Get Started </a></button>
+     </div>
+
+
+
+
+     <!-- bot -->
+     <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "2712a35d-a88a-4a4c-b541-3ecb117051c6", // The ID of this integration.
+          region: "au-syd", // The region your integration is hosted in.
+          serviceInstanceID: "fad437e6-00ad-4ae3-bd76-acd36f07aff5", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+
+
+	<script src="{{url_for('static', filename='main.js')}}"></script>
+
+
+
+</body>
+</html>
