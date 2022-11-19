@@ -22,3 +22,5 @@ The project aims to develop a system that converts the sign language into a huma
 
 ![image](https://user-images.githubusercontent.com/86822428/201477050-0c49162f-a1de-494f-b2d7-431f7cfb7152.png)
 
+demo link :- 
+   https://youtu.be/NH336jiS4YY
